@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base: '/dispatch/',
+  base: '/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api/dispatch': {
+      'https://dispatch-worker.stevenman.us': {
         target: 'https://dispatch-worker.stevenman.us',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/dispatch/, ''),

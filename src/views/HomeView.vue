@@ -117,7 +117,7 @@ const errorMessage = ref('');
 
 async function search(startDate: string, endDate: string) {
     store.loading = true;
-    let url = `/api/dispatch/incidents/${startDate}/${endDate}`
+    let url = `https://dispatch-worker.stevenman.us/incidents/${startDate}/${endDate}`
     try {
         let response = await fetch(url, {
             headers: {
