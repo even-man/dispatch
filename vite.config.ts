@@ -18,10 +18,9 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      'https://dispatch-worker.stevenman.us': {
-        target: 'https://dispatch-worker.stevenman.us',
+      '/api': {
+        target: 'https://dispatch.stevenman.us',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/dispatch/, ''),
       },
     },
   },
